@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="st_index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">MOOC</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="st_index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+                    aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>NPTEL</span>
+                </a>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item active" href="course_registration.html">Course Registration</a>
+                        <a class="collapse-item" href="certificate_upload.html">Certificate Upload</a>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="st_profile.html">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#changePasswordModal">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Available Courses</h1>
+
+                    <!-- Courses Table -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="m-0 font-weight-bold text-primary">Course Name</th>
+                                    <th class="m-0 font-weight-bold text-primary">Course Code</th>
+                                    <th class="m-0 font-weight-bold text-primary">Department</th>
+                                    <th class="m-0 font-weight-bold text-primary">Timeline</th>
+                                    <th class="m-0 font-weight-bold text-primary">Course Duration</th>
+                                    <th class="m-0 font-weight-bold text-primary">Course Credits</th>
+                                    <th class="m-0 font-weight-bold text-primary">Course Category</th>
+                                    <th class="m-0 font-weight-bold text-primary">Course Link</th>
+                                    <th class="m-0 font-weight-bold text-primary">Register</th>
+                                </tr>
+                            </thead>
+                            <tbody id="courseTableBody">
+                            </tbody>
+                        </table>
+
+                        <style>
+                            /* Table Header Styling */
+                            .thead-dark th {
+                                background-color: #4e73df;
+                                color: #fff;
+                            }
+
+                            /* Table Row Hover Effect */
+                            .table-hover tbody tr:hover {
+                                background-color: #f8f9fc;
+                            }
+
+                            /* Link Styling */
+                            .text-primary {
+                                color: #4e73df !important;
+                                text-decoration: none;
+                            }
+
+                            .text-primary:hover {
+                                text-decoration: underline;
+                            }
+
+                            /* Button Styling */
+                            .btn-primary {
+                                background-color: #4e73df;
+                                border-color: #4e73df;
+                            }
+
+                            .btn-primary:hover {
+                                background-color: #2e59d9;
+                                border-color: #2653d4;
+                            }
+
+                            /* Table Cell Padding */
+                            .table td,
+                            .table th {
+                                vertical-align: middle;
+                                text-align: center;
+                            }
+
+                            .register-btn {
+                                background-color: blue;
+                                /* Blue background */
+                                color: white;
+                                /* White text */
+                                border: none;
+                                /* No border */
+                                padding: 10px 15px;
+                                /* Padding for size */
+                                cursor: pointer;
+                                /* Pointer cursor on hover */
+                                border-radius: 5px;
+                                /* Rounded corners */
+                            }
+
+                            .register-btn:hover {
+                                background-color: darkblue;
+                                /* Darker blue on hover */
+                            }
+                        </style>
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="button"
+                            onclick="window.location.href='login.html'">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Change Password Modal -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog"
+            aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="changePasswordForm">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="currentPassword">Current Password</label>
+                                <input type="password" class="form-control" id="currentPassword" name="currentPassword"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" class="form-control" id="newPassword" name="newPassword"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Re-enter New Password</label>
+                                <input type="password" class="form-control" id="confirmNewPassword"
+                                    name="confirmNewPassword" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Custom script for course registration -->
+        <script>
+            $(document).ready(function () {
+                fetchActivatedCourses();
+            });
+
+            function fetchActivatedCourses() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'fetch_courses.php', // Ensure this path is correct
+                    success: function (response) {
+                        const courses = JSON.parse(response);
+                        displayCourses(courses);
+                    },
+                    error: function () {
+                        alert('An error occurred while fetching courses.');
+                    }
+                });
+            }
+
+            function displayCourses(courses) {
+                const courseTableBody = document.getElementById('courseTableBody');
+                courseTableBody.innerHTML = ''; // Clear any existing rows
+
+                if (Array.isArray(courses) && courses.length > 0) {
+                    courses.forEach(course => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${course.course_name}</td>
+                            <td>${course.course_code}</td>
+                            <td>${course.department}</td>
+                            <td>${course.timeline}</td>
+                            <td>${course.course_duration}</td>
+                            <td>${course.course_credits}</td>
+                            <td>${course.course_category}</td>
+                            <td>${course.course_link}</td>
+                            <td>
+                                <button class="register-btn" data-course-code="${course.course_code}">Register</button>
+                            </td>
+                        `;
+                        courseTableBody.appendChild(row);
+                    });
+                } else {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `<td colspan="9">No active courses available.</td>`;
+                    courseTableBody.appendChild(row);
+                }
+
+                // Attach click event to register buttons
+                attachRegisterEvent();
+            }
+
+            function attachRegisterEvent() {
+                const registerButtons = document.querySelectorAll('.register-btn');
+                registerButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const courseCode = this.getAttribute('data-course-code');
+                        registerForCourse(courseCode);
+                    });
+                });
+            }
+
+            function registerForCourse(courseCode) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'register_course.php', // Ensure this path is correct
+                    data: { course_code: courseCode },
+                    success: function (response) {
+                        const result = JSON.parse(response);
+                        if (result.success) {
+                            alert(result.message); // Success message
+                            fetchActivatedCourses(); // Refresh the course list
+                        } else {
+                            alert(result.message); // Error message
+                        }
+                    },
+                    error: function () {
+                        alert('Error registering for course: ' + courseCode);
+                    }
+                });
+            }
+            document.getElementById('changePasswordForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                const currentPassword = document.getElementById('currentPassword').value;
+                const newPassword = document.getElementById('newPassword').value;
+                const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+
+                if (newPassword !== confirmNewPassword) {
+                    alert('New passwords do not match.');
+                    return;
+                }
+
+                fetch('change_password.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        currentPassword: currentPassword,
+                        newPassword: newPassword
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Password changed successfully.');
+                            $('#changePasswordModal').modal('hide');
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            });
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+body {
+    background-image: url('https://i.redd.it/25vx7i678xmd1.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+    font: normal 14px 'Montserrat', arial, sans-serif;
+    font-family: 'Pacifico', cursive !important;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.row {
+    width: 100%; /* Ensure row takes full width */
+}
+
+.form-login {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 20px; /* Consistent padding */
+    border-radius: 15px;
+    border: 5px solid #ebe9ef;
+    color: white;
+    box-shadow: 0 1px 0 #cfcfcf;
+    max-width: 400px; /* Set a max width for the form */
+    width: 100%; /* Ensure the form can shrink on small screens */
+}
+
+h1 {
+    color: rgb(226, 35, 35) !important;
+}
+
+h4 {
+    border: 0 solid #fff;
+    border-bottom-width: 1px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.footer p {
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 50px 20px; /* Reduce padding for smaller screens */
+    }
+
+    .form-login {
+        padding: 20px; /* Padding for smaller screens */
+        border-width: 3px; /* Adjust border for smaller screens */
+    }
+
+    .form-control {
+        font-size: 16px !important; /* Font size for smaller screens */
+    }
+
+    h1 {
+        font-size: 24px; /* Font size for h1 */
+    }
+
+    h4 {
+        font-size: 18px; /* Font size for h4 */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 10px; /* Further reduce padding for very small screens */
+    }
+
+    .form-login {
+        padding: 15px; /* Standard padding */
+        border-width: 2px; /* Adjust border for very small screens */
+    }
+
+    .form-control {
+        font-size: 14px !important; /* Font size for very small screens */
+    }
+
+    h1 {
+        font-size: 20px; /* Font size for h1 */
+    }
+
+    h4 {
+        font-size: 16px; /* Font size for h4 */
+    }
+}
